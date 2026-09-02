@@ -1,0 +1,28 @@
+name: Validate Settings
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+
+jobs:
+  validate-settings:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - name: Check JSON syntax
+        run: jq empty settings.json
+
+      - name: Validate against Claude Code settings schema
+        run: |
+          pipx run check-jsonschema --no-cache \
+            --schemafile https://json.schemastore.org/claude-code-settings.json \
+            settings.json

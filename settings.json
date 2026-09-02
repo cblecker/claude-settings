@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "attribution": {
+    "commit": "Assisted-by: LLM",
+    "pr": "This PR was written in part with the assistance of generative AI.",
+    "sessionUrl": false
+  },
+  "includeGitInstructions": false
+}
