@@ -5,5 +5,6 @@
     "pr": "This PR was written in part with the assistance of generative AI.",
     "sessionUrl": false
   },
-  "includeGitInstructions": false
+  "includeGitInstructions": false,
+  "advisorModel": "fable"
 }
